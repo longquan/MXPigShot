@@ -15,8 +15,9 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
+    @private CCSprite *pSprite;
 }
-
+@property (retain, nonatomic) CCSprite *pSprite;
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
 

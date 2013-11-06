@@ -138,9 +138,13 @@
 		BCDBA9841828EEBE007768A5 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA9831828EEBE007768A5 /* vec3.c */; };
 		BCDBA9861828EEBE007768A5 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA9851828EEBE007768A5 /* vec4.c */; };
 		BCDBA98B1828EEBE007768A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA98A1828EEBE007768A5 /* main.m */; };
-		BCDBA98E1828EEBE007768A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA98D1828EEBE007768A5 /* AppDelegate.m */; };
+		BCDBA98E1828EEBE007768A5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA98D1828EEBE007768A5 /* AppDelegate.mm */; };
 		BCDBA9911828EEBE007768A5 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA9901828EEBE007768A5 /* HelloWorldLayer.m */; };
 		BCDBA9941828EEBE007768A5 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BCDBA9931828EEBE007768A5 /* IntroLayer.m */; };
+		BCDBA99E1828EFEF007768A5 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BCDBA99A1828EFEF007768A5 /* bg.jpg */; };
+		BCDBA99F1828EFEF007768A5 /* enemy.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDBA99B1828EFEF007768A5 /* enemy.png */; };
+		BCDBA9A01828EFEF007768A5 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDBA99C1828EFEF007768A5 /* people.png */; };
+		BCDBA9A11828EFEF007768A5 /* war.png in Resources */ = {isa = PBXBuildFile; fileRef = BCDBA99D1828EFEF007768A5 /* war.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -420,11 +424,15 @@
 		BCDBA9891828EEBE007768A5 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		BCDBA98A1828EEBE007768A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCDBA98C1828EEBE007768A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BCDBA98D1828EEBE007768A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BCDBA98D1828EEBE007768A5 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		BCDBA98F1828EEBE007768A5 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		BCDBA9901828EEBE007768A5 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		BCDBA9921828EEBE007768A5 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		BCDBA9931828EEBE007768A5 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		BCDBA99A1828EFEF007768A5 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Resources/bg.jpg; sourceTree = "<group>"; };
+		BCDBA99B1828EFEF007768A5 /* enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = enemy.png; path = Resources/enemy.png; sourceTree = "<group>"; };
+		BCDBA99C1828EFEF007768A5 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = people.png; path = Resources/people.png; sourceTree = "<group>"; };
+		BCDBA99D1828EFEF007768A5 /* war.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = war.png; path = Resources/war.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,7 +494,7 @@
 			isa = PBXGroup;
 			children = (
 				BCDBA98C1828EEBE007768A5 /* AppDelegate.h */,
-				BCDBA98D1828EEBE007768A5 /* AppDelegate.m */,
+				BCDBA98D1828EEBE007768A5 /* AppDelegate.mm */,
 				BCDBA98F1828EEBE007768A5 /* HelloWorldLayer.h */,
 				BCDBA9901828EEBE007768A5 /* HelloWorldLayer.m */,
 				BCDBA9921828EEBE007768A5 /* IntroLayer.h */,
@@ -501,6 +509,10 @@
 		BCDBA7FC1828EEBD007768A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCDBA99A1828EFEF007768A5 /* bg.jpg */,
+				BCDBA99B1828EFEF007768A5 /* enemy.png */,
+				BCDBA99C1828EFEF007768A5 /* people.png */,
+				BCDBA99D1828EFEF007768A5 /* war.png */,
 				BCDBA7FD1828EEBD007768A5 /* Default.png */,
 				BCDBA7FF1828EEBD007768A5 /* Default@2x.png */,
 				BCDBA8011828EEBD007768A5 /* Default-568h@2x.png */,
@@ -930,13 +942,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDBA99E1828EFEF007768A5 /* bg.jpg in Resources */,
 				BCDBA80E1828EEBD007768A5 /* Icon.png in Resources */,
+				BCDBA99F1828EFEF007768A5 /* enemy.png in Resources */,
 				BCDBA96C1828EEBE007768A5 /* ChangeLog in Resources */,
+				BCDBA9A11828EFEF007768A5 /* war.png in Resources */,
 				BCDBA8001828EEBD007768A5 /* Default@2x.png in Resources */,
 				BCDBA80A1828EEBD007768A5 /* Icon-Small.png in Resources */,
 				BCDBA8061828EEBD007768A5 /* Icon-72.png in Resources */,
 				BCDBA7FE1828EEBD007768A5 /* Default.png in Resources */,
 				BCDBA8081828EEBD007768A5 /* Icon-Small-50.png in Resources */,
+				BCDBA9A01828EFEF007768A5 /* people.png in Resources */,
 				BCDBA8131828EEBD007768A5 /* iTunesArtwork in Resources */,
 				BCDBA80C1828EEBD007768A5 /* Icon-Small@2x.png in Resources */,
 				BCDBA8041828EEBD007768A5 /* Default-Landscape~ipad.png in Resources */,
@@ -996,7 +1012,7 @@
 				BCDBA8C31828EEBE007768A5 /* CCSprite.m in Sources */,
 				BCDBA86A1828EEBD007768A5 /* CCGrabber.m in Sources */,
 				BCDBA9741828EEBE007768A5 /* mat3.c in Sources */,
-				BCDBA98E1828EEBE007768A5 /* AppDelegate.m in Sources */,
+				BCDBA98E1828EEBE007768A5 /* AppDelegate.mm in Sources */,
 				BCDBA8FE1828EEBE007768A5 /* CCES2Renderer.m in Sources */,
 				BCDBA8701828EEBD007768A5 /* CCLabelAtlas.m in Sources */,
 				BCDBA88C1828EEBD007768A5 /* CCParallaxNode.m in Sources */,
