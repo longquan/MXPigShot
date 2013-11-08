@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCA10E90182CC580003E9CE1 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA10E8F182CC580003E9CE1 /* GameOverScene.m */; };
 		BCDBA7E81828EEBD007768A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */; };
 		BCDBA7EA1828EEBD007768A5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */; };
 		BCDBA7EC1828EEBD007768A5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7EB1828EEBD007768A5 /* OpenAL.framework */; };
@@ -148,6 +149,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCA10E8E182CC580003E9CE1 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		BCA10E8F182CC580003E9CE1 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		BCDBA7E41828EEBD007768A5 /* MXPigShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXPigShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -499,6 +502,8 @@
 				BCDBA9901828EEBE007768A5 /* HelloWorldLayer.m */,
 				BCDBA9921828EEBE007768A5 /* IntroLayer.h */,
 				BCDBA9931828EEBE007768A5 /* IntroLayer.m */,
+				BCA10E8E182CC580003E9CE1 /* GameOverScene.h */,
+				BCA10E8F182CC580003E9CE1 /* GameOverScene.m */,
 				BCDBA7FC1828EEBD007768A5 /* Resources */,
 				BCDBA8141828EEBD007768A5 /* libs */,
 				BCDBA9881828EEBE007768A5 /* Supporting Files */,
@@ -1007,6 +1012,7 @@
 				BCDBA94D1828EEBE007768A5 /* CDXPropertyModifierAction.m in Sources */,
 				BCDBA91D1828EEBE007768A5 /* CCArray.m in Sources */,
 				BCDBA97A1828EEBE007768A5 /* plane.c in Sources */,
+				BCA10E90182CC580003E9CE1 /* GameOverScene.m in Sources */,
 				BCDBA9261828EEBE007768A5 /* CCProfiling.m in Sources */,
 				BCDBA8BD1828EEBE007768A5 /* CCShaderCache.m in Sources */,
 				BCDBA8C31828EEBE007768A5 /* CCSprite.m in Sources */,
@@ -1185,6 +1191,7 @@
 				BCDBA9991828EEBE007768A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -42,6 +42,8 @@
 	if( (self=[super init]) ) {
         float imageW = 200.0;
         float imageH = 150.0;
+        _targets = [[NSMutableArray alloc] init];
+        _projectiles = [[NSMutableArray alloc] init];
         CGSize size = [[CCDirector sharedDirector] winSize];
         //添加草地的背景图
 		CCSprite *bgSprite = [CCSprite spriteWithFile:@"bg.jpg" rect:CGRectMake(0, 0, imageW/2, imageH/2)];
@@ -60,6 +62,7 @@
 	}
     //定时添加目标
     [self schedule:@selector(gameLogic:) interval:1.0];
+    [self schedule:@selector(update:)];
 	return self;
 }
 
@@ -71,14 +74,12 @@
     CCSprite *target = [CCSprite spriteWithFile:@"enemy.png"
                                            rect:CGRectMake(0, 0, 27, 40)];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    int minY = target.contentSize.height/2;
-    int maxY = winSize.height - target.contentSize.height/2;
-    int rangeY = maxY - minY;
-    int actualY = (arc4random() % rangeY) + minY;
-    
+    int actualx = (arc4random() % ((int)winSize.width/3)) + winSize.width*2/3;
     // Create the target slightly off-screen along the right edge,
     // and along a random position along the Y axis as calculated above
-    target.position = ccp(winSize.width + (target.contentSize.width/2), actualY);
+    target.position = ccp(actualx, winSize.height);
+    target.tag = 1;
+    [_targets addObject:target];
     [self addChild:target];
     
     // Determine speed of the target
@@ -89,16 +90,86 @@
     
     // Create the actions
     id actionMove = [CCMoveTo actionWithDuration:actualDuration
-                                        position:ccp(-target.contentSize.width/2, actualY)];
-    id actionMoveDone = [CCCallFuncN actionWithTarget:self
-                                             selector:@selector(spriteMoveFinished:)];
-    [target runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
+                                        position:ccp(actualx, 0)];
+    id actionMoveOther = [CCCallFuncN actionWithTarget:self selector:@selector(actionMoveOther:)];
+    [target runAction:[CCSequence actions:actionMove, actionMoveOther, nil]];
+
+}
+
+- (void)actionMoveOther:(id)sender{
+    CCSprite *sprite = (CCSprite *)sender;
+    // Determine speed of the target
+    int minDuration = 2.0;
+    int maxDuration = 4.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
     
+    // Create the actions
+    id actionMove = [CCMoveTo actionWithDuration:actualDuration
+                                        position:ccp(0, 0)];
+    id actionMoveDone = [CCCallFuncN actionWithTarget:self
+                                                 selector:@selector(spriteMoveFinished:)];
+    [sprite runAction:[CCSequence actions:actionMove, actionMoveDone, nil]];
 }
 
 -(void)spriteMoveFinished:(id)sender {
     CCSprite *sprite = (CCSprite *)sender;
+    if (sprite.tag == 1) { // target
+        [_targets removeObject:sprite];
+        GameOverScene *gameOverScene = [GameOverScene node];
+        [gameOverScene.layer.label setString:@"You Lose :["];
+        [[CCDirector sharedDirector] replaceScene:gameOverScene];
+    } else if (sprite.tag == 2) { // projectile
+        [_projectiles removeObject:sprite];
+    }
     [self removeChild:sprite cleanup:YES];
+}
+
+//  抛物线
+//mSprite：需要做抛物线的精灵
+//startPoint:起始位置
+//endPoint:中止位置
+//dirTime:起始位置到中止位置的所需时间
+- (void) moveWithParabola:(CCSprite*)mSprite startP:(CGPoint)startPoint endP:(CGPoint)endPoint dirTime:(float)time{
+    float sx = startPoint.x;
+    float sy = startPoint.y;
+    float ex =endPoint.x+50;
+    float ey =endPoint.y+150;
+    int h = [mSprite contentSize].height*0.5;
+    ccBezierConfig bezier; // 创建贝塞尔曲线
+    bezier.controlPoint_1 = ccp(sx, sy); // 起始点
+    bezier.controlPoint_2 = ccp(sx+(ex-sx)*0.5, sy+(ey-sy)*0.5+200); //控制点
+    bezier.endPosition = ccp(endPoint.x-30, endPoint.y+h); // 结束位置
+    CCBezierTo *actionMove = [CCBezierTo actionWithDuration:time bezier:bezier];
+    [mSprite runAction:actionMove];
+}
+
+
+//  抛物线运动并同时旋转
+//mSprite：需要做抛物线的精灵
+//startPoint:起始位置
+//endPoint:中止位置
+//startA:起始角度
+//endA:中止角度
+//dirTime:起始位置到中止位置的所需时间
+- (void) moveWithParabola:(CCSprite*)mSprite startP:(CGPoint)startPoint endP:(CGPoint)endPoint startA:(float)startAngle endA:(float)endAngle dirTime:(float)time{
+    float sx = startPoint.x;
+    float sy = startPoint.y;
+    float ex =endPoint.x+50;
+    float ey =endPoint.y+150;
+    int h = [mSprite contentSize].height*0.5;
+    //设置精灵的起始角度
+    mSprite.rotation=startAngle;
+    ccBezierConfig bezier; // 创建贝塞尔曲线
+    bezier.controlPoint_1 = ccp(sx, sy); // 起始点
+    bezier.controlPoint_2 = ccp(sx+(ex-sx)*0.5, sy+(ey-sy)*0.5+200); //控制点
+    bezier.endPosition = ccp(endPoint.x-30, endPoint.y+h); // 结束位置
+    CCBezierTo *actionMove = [CCBezierTo actionWithDuration:time bezier:bezier];
+    //创建精灵旋转的动作
+    CCRotateTo *actionRotate =[CCRotateTo actionWithDuration:time angle:endAngle];
+    //将两个动作封装成一个同时播放进行的动作
+    CCAction * action = [CCSpawn actions:actionMove, actionRotate, nil];
+    [mSprite runAction:action];
 }
 
 
@@ -116,6 +187,8 @@
     CCSprite *projectile = [CCSprite spriteWithFile:@"war.png"
                                                rect:CGRectMake(0, 0, 20, 20)];
     projectile.position = ccp(20, location.y);
+    projectile.tag = 2;
+    [_projectiles addObject:projectile];
     [self addChild:projectile];
     
 
@@ -131,6 +204,55 @@
     
 }
 
+- (void)update:(ccTime)dt {
+    NSMutableArray *projectilesToDelete = [[NSMutableArray alloc] init];
+    for (CCSprite *projectile in _projectiles) {
+        CGRect projectileRect = CGRectMake(
+                                           projectile.position.x - (projectile.contentSize.width/2),
+                                           projectile.position.y - (projectile.contentSize.height/2),
+                                           projectile.contentSize.width,
+                                           projectile.contentSize.height);
+        
+        NSMutableArray *targetsToDelete = [[NSMutableArray alloc] init];
+        for (CCSprite *target in _targets) {
+            CGRect targetRect = CGRectMake(
+                                           target.position.x - (target.contentSize.width/2),
+                                           target.position.y - (target.contentSize.height/2),
+                                           target.contentSize.width,
+                                           target.contentSize.height);
+            
+            if (CGRectIntersectsRect(projectileRect, targetRect)) {
+                [targetsToDelete addObject:target];
+            }
+        }
+        
+        for (CCSprite *target in targetsToDelete) {
+            [_targets removeObject:target];
+            [self removeChild:target cleanup:YES];
+            _projectilesDestroyed++;
+            if (_projectilesDestroyed > 50) {
+                GameOverScene *gameOverScene = [GameOverScene node];
+                [gameOverScene.layer.label setString:@"You Win!"];
+                [[CCDirector sharedDirector] replaceScene:gameOverScene];
+                
+            }
+        }
+        
+        if (targetsToDelete.count > 0) {
+            [projectilesToDelete addObject:projectile];
+        }
+        [targetsToDelete release];
+        
+    }
+    for (CCSprite *projectile in projectilesToDelete) {
+        [_projectiles removeObject:projectile];
+        [self removeChild:projectile cleanup:YES];
+    }
+    [projectilesToDelete release];
+    
+}
+
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
@@ -140,6 +262,10 @@
 	// cocos2d will automatically release all the children (Label)
 	
 	// don't forget to call "super dealloc"
+    [_targets release];
+    _targets = nil;
+    [_projectiles release];
+    _projectiles = nil;
 	[super dealloc];
 }
 
