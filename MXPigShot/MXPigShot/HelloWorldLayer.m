@@ -45,6 +45,7 @@
         _targets = [[NSMutableArray alloc] init];
         _projectiles = [[NSMutableArray alloc] init];
         CGSize size = [[CCDirector sharedDirector] winSize];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
         //添加草地的背景图
 		CCSprite *bgSprite = [CCSprite spriteWithFile:@"bg.jpg" rect:CGRectMake(0, 0, imageW/2, imageH/2)];
         float winw = size.width*2/imageW;
@@ -174,7 +175,7 @@
 
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    [[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];
+    [[SimpleAudioEngine sharedEngine] playEffect:@"pew-pew-lei.caf"];
     // Choose one of the touches to work with
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:[touch view]];

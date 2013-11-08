@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BCA10E90182CC580003E9CE1 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA10E8F182CC580003E9CE1 /* GameOverScene.m */; };
+		BCA10E93182CC941003E9CE1 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = BCA10E91182CC941003E9CE1 /* background-music-aac.caf */; };
+		BCA10E94182CC941003E9CE1 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */; };
 		BCDBA7E81828EEBD007768A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */; };
 		BCDBA7EA1828EEBD007768A5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */; };
 		BCDBA7EC1828EEBD007768A5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7EB1828EEBD007768A5 /* OpenAL.framework */; };
@@ -151,6 +153,8 @@
 /* Begin PBXFileReference section */
 		BCA10E8E182CC580003E9CE1 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		BCA10E8F182CC580003E9CE1 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
+		BCA10E91182CC941003E9CE1 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-music-aac.caf"; path = "Resources/background-music-aac.caf"; sourceTree = "<group>"; };
+		BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pew-pew-lei.caf"; path = "Resources/pew-pew-lei.caf"; sourceTree = "<group>"; };
 		BCDBA7E41828EEBD007768A5 /* MXPigShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXPigShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -514,6 +518,8 @@
 		BCDBA7FC1828EEBD007768A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCA10E91182CC941003E9CE1 /* background-music-aac.caf */,
+				BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */,
 				BCDBA99A1828EFEF007768A5 /* bg.jpg */,
 				BCDBA99B1828EFEF007768A5 /* enemy.png */,
 				BCDBA99C1828EFEF007768A5 /* people.png */,
@@ -961,8 +967,10 @@
 				BCDBA8131828EEBD007768A5 /* iTunesArtwork in Resources */,
 				BCDBA80C1828EEBD007768A5 /* Icon-Small@2x.png in Resources */,
 				BCDBA8041828EEBD007768A5 /* Default-Landscape~ipad.png in Resources */,
+				BCA10E93182CC941003E9CE1 /* background-music-aac.caf in Resources */,
 				BCDBA8021828EEBD007768A5 /* Default-568h@2x.png in Resources */,
 				BCDBA8101828EEBD007768A5 /* Icon@2x.png in Resources */,
+				BCA10E94182CC941003E9CE1 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
