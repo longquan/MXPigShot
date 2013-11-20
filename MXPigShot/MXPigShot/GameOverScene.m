@@ -56,7 +56,6 @@
 } 
 
 - (void)gameOverDone { 
-    
     [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene] ];
     
 } 

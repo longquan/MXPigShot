@@ -15,9 +15,30 @@
 
 #pragma mark - HelloWorldLayer
 
+@implementation HelloWorldScene
+@synthesize layer = _layer;
+
+- (id)init {
+    if ((self = [super init])) {
+        self.layer = [HelloWorldLayer node];
+        [self addChild:_layer];
+    }
+    return self;
+}
+
+- (void)dealloc {
+    [_layer release];
+    _layer = nil;
+    [super dealloc];
+}
+
+@end
+
+
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 @synthesize pSprite;
+@synthesize sceneNum;
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
 {
@@ -46,8 +67,7 @@
         _projectiles = [[NSMutableArray alloc] init];
         CGSize size = [[CCDirector sharedDirector] winSize];
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"background-music-aac.caf"];
-        //添加草地的背景图
-		CCSprite *bgSprite = [CCSprite spriteWithFile:@"bg.jpg" rect:CGRectMake(0, 0, imageW/2, imageH/2)];
+        CCSprite *bgSprite = [CCSprite spriteWithFile:@"bg.jpg" rect:CGRectMake(0, 0, imageW/2, imageH/2)];
         float winw = size.width*2/imageW;
         float winy = size.height*2/imageH;
         bgSprite.scaleX = winw;
@@ -72,6 +92,7 @@
 }
 
 -(void)addTarget {
+    NSLog(@"sceneNum:%d",sceneNum);
     CCSprite *target = [CCSprite spriteWithFile:@"enemy.png"
                                            rect:CGRectMake(0, 0, 27, 40)];
     CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -124,53 +145,6 @@
         [_projectiles removeObject:sprite];
     }
     [self removeChild:sprite cleanup:YES];
-}
-
-//  抛物线
-//mSprite：需要做抛物线的精灵
-//startPoint:起始位置
-//endPoint:中止位置
-//dirTime:起始位置到中止位置的所需时间
-- (void) moveWithParabola:(CCSprite*)mSprite startP:(CGPoint)startPoint endP:(CGPoint)endPoint dirTime:(float)time{
-    float sx = startPoint.x;
-    float sy = startPoint.y;
-    float ex =endPoint.x+50;
-    float ey =endPoint.y+150;
-    int h = [mSprite contentSize].height*0.5;
-    ccBezierConfig bezier; // 创建贝塞尔曲线
-    bezier.controlPoint_1 = ccp(sx, sy); // 起始点
-    bezier.controlPoint_2 = ccp(sx+(ex-sx)*0.5, sy+(ey-sy)*0.5+200); //控制点
-    bezier.endPosition = ccp(endPoint.x-30, endPoint.y+h); // 结束位置
-    CCBezierTo *actionMove = [CCBezierTo actionWithDuration:time bezier:bezier];
-    [mSprite runAction:actionMove];
-}
-
-
-//  抛物线运动并同时旋转
-//mSprite：需要做抛物线的精灵
-//startPoint:起始位置
-//endPoint:中止位置
-//startA:起始角度
-//endA:中止角度
-//dirTime:起始位置到中止位置的所需时间
-- (void) moveWithParabola:(CCSprite*)mSprite startP:(CGPoint)startPoint endP:(CGPoint)endPoint startA:(float)startAngle endA:(float)endAngle dirTime:(float)time{
-    float sx = startPoint.x;
-    float sy = startPoint.y;
-    float ex =endPoint.x+50;
-    float ey =endPoint.y+150;
-    int h = [mSprite contentSize].height*0.5;
-    //设置精灵的起始角度
-    mSprite.rotation=startAngle;
-    ccBezierConfig bezier; // 创建贝塞尔曲线
-    bezier.controlPoint_1 = ccp(sx, sy); // 起始点
-    bezier.controlPoint_2 = ccp(sx+(ex-sx)*0.5, sy+(ey-sy)*0.5+200); //控制点
-    bezier.endPosition = ccp(endPoint.x-30, endPoint.y+h); // 结束位置
-    CCBezierTo *actionMove = [CCBezierTo actionWithDuration:time bezier:bezier];
-    //创建精灵旋转的动作
-    CCRotateTo *actionRotate =[CCRotateTo actionWithDuration:time angle:endAngle];
-    //将两个动作封装成一个同时播放进行的动作
-    CCAction * action = [CCSpawn actions:actionMove, actionRotate, nil];
-    [mSprite runAction:action];
 }
 
 

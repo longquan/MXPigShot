@@ -10,6 +10,16 @@
 		BCA10E90182CC580003E9CE1 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA10E8F182CC580003E9CE1 /* GameOverScene.m */; };
 		BCA10E93182CC941003E9CE1 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = BCA10E91182CC941003E9CE1 /* background-music-aac.caf */; };
 		BCA10E94182CC941003E9CE1 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */; };
+		BCC044D0182E16CB00451A67 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044C9182E16CB00451A67 /* autumn.png */; };
+		BCC044D1182E16CB00451A67 /* autumnbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CA182E16CB00451A67 /* autumnbg.png */; };
+		BCC044D2182E16CB00451A67 /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CB182E16CB00451A67 /* spring.png */; };
+		BCC044D3182E16CB00451A67 /* springbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CC182E16CB00451A67 /* springbg.png */; };
+		BCC044D4182E16CB00451A67 /* summer.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CD182E16CB00451A67 /* summer.png */; };
+		BCC044D5182E16CB00451A67 /* summerbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CE182E16CB00451A67 /* summerbg.png */; };
+		BCC044D6182E16CB00451A67 /* winter.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044CF182E16CB00451A67 /* winter.png */; };
+		BCC044D8182E16E200451A67 /* winterbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BCC044D7182E16E200451A67 /* winterbg.png */; };
+		BCCA0C5B182DD84500ACBD50 /* GameBeginScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCA0C5A182DD84500ACBD50 /* GameBeginScene.m */; };
+		BCD9A9BD1832273F00EC6725 /* ExcessiveScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD9A9BC1832273F00EC6725 /* ExcessiveScene.m */; };
 		BCDBA7E81828EEBD007768A5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */; };
 		BCDBA7EA1828EEBD007768A5 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */; };
 		BCDBA7EC1828EEBD007768A5 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDBA7EB1828EEBD007768A5 /* OpenAL.framework */; };
@@ -155,6 +165,18 @@
 		BCA10E8F182CC580003E9CE1 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameOverScene.m; sourceTree = "<group>"; };
 		BCA10E91182CC941003E9CE1 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "background-music-aac.caf"; path = "Resources/background-music-aac.caf"; sourceTree = "<group>"; };
 		BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "pew-pew-lei.caf"; path = "Resources/pew-pew-lei.caf"; sourceTree = "<group>"; };
+		BCC044C9182E16CB00451A67 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = autumn.png; path = Resources/autumn.png; sourceTree = "<group>"; };
+		BCC044CA182E16CB00451A67 /* autumnbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = autumnbg.png; path = Resources/autumnbg.png; sourceTree = "<group>"; };
+		BCC044CB182E16CB00451A67 /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spring.png; path = Resources/spring.png; sourceTree = "<group>"; };
+		BCC044CC182E16CB00451A67 /* springbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = springbg.png; path = Resources/springbg.png; sourceTree = "<group>"; };
+		BCC044CD182E16CB00451A67 /* summer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = summer.png; path = Resources/summer.png; sourceTree = "<group>"; };
+		BCC044CE182E16CB00451A67 /* summerbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = summerbg.png; path = Resources/summerbg.png; sourceTree = "<group>"; };
+		BCC044CF182E16CB00451A67 /* winter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = winter.png; path = Resources/winter.png; sourceTree = "<group>"; };
+		BCC044D7182E16E200451A67 /* winterbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = winterbg.png; path = Resources/winterbg.png; sourceTree = "<group>"; };
+		BCCA0C59182DD84500ACBD50 /* GameBeginScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBeginScene.h; sourceTree = "<group>"; };
+		BCCA0C5A182DD84500ACBD50 /* GameBeginScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBeginScene.m; sourceTree = "<group>"; };
+		BCD9A9BB1832273F00EC6725 /* ExcessiveScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExcessiveScene.h; sourceTree = "<group>"; };
+		BCD9A9BC1832273F00EC6725 /* ExcessiveScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExcessiveScene.m; sourceTree = "<group>"; };
 		BCDBA7E41828EEBD007768A5 /* MXPigShot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXPigShot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDBA7E71828EEBD007768A5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BCDBA7E91828EEBD007768A5 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -508,6 +530,10 @@
 				BCDBA9931828EEBE007768A5 /* IntroLayer.m */,
 				BCA10E8E182CC580003E9CE1 /* GameOverScene.h */,
 				BCA10E8F182CC580003E9CE1 /* GameOverScene.m */,
+				BCCA0C59182DD84500ACBD50 /* GameBeginScene.h */,
+				BCCA0C5A182DD84500ACBD50 /* GameBeginScene.m */,
+				BCD9A9BB1832273F00EC6725 /* ExcessiveScene.h */,
+				BCD9A9BC1832273F00EC6725 /* ExcessiveScene.m */,
 				BCDBA7FC1828EEBD007768A5 /* Resources */,
 				BCDBA8141828EEBD007768A5 /* libs */,
 				BCDBA9881828EEBE007768A5 /* Supporting Files */,
@@ -518,6 +544,14 @@
 		BCDBA7FC1828EEBD007768A5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCC044D7182E16E200451A67 /* winterbg.png */,
+				BCC044C9182E16CB00451A67 /* autumn.png */,
+				BCC044CA182E16CB00451A67 /* autumnbg.png */,
+				BCC044CB182E16CB00451A67 /* spring.png */,
+				BCC044CC182E16CB00451A67 /* springbg.png */,
+				BCC044CD182E16CB00451A67 /* summer.png */,
+				BCC044CE182E16CB00451A67 /* summerbg.png */,
+				BCC044CF182E16CB00451A67 /* winter.png */,
 				BCA10E91182CC941003E9CE1 /* background-music-aac.caf */,
 				BCA10E92182CC941003E9CE1 /* pew-pew-lei.caf */,
 				BCDBA99A1828EFEF007768A5 /* bg.jpg */,
@@ -954,11 +988,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCDBA99E1828EFEF007768A5 /* bg.jpg in Resources */,
+				BCC044D5182E16CB00451A67 /* summerbg.png in Resources */,
 				BCDBA80E1828EEBD007768A5 /* Icon.png in Resources */,
 				BCDBA99F1828EFEF007768A5 /* enemy.png in Resources */,
 				BCDBA96C1828EEBE007768A5 /* ChangeLog in Resources */,
 				BCDBA9A11828EFEF007768A5 /* war.png in Resources */,
 				BCDBA8001828EEBD007768A5 /* Default@2x.png in Resources */,
+				BCC044D1182E16CB00451A67 /* autumnbg.png in Resources */,
 				BCDBA80A1828EEBD007768A5 /* Icon-Small.png in Resources */,
 				BCDBA8061828EEBD007768A5 /* Icon-72.png in Resources */,
 				BCDBA7FE1828EEBD007768A5 /* Default.png in Resources */,
@@ -967,8 +1003,14 @@
 				BCDBA8131828EEBD007768A5 /* iTunesArtwork in Resources */,
 				BCDBA80C1828EEBD007768A5 /* Icon-Small@2x.png in Resources */,
 				BCDBA8041828EEBD007768A5 /* Default-Landscape~ipad.png in Resources */,
+				BCC044D3182E16CB00451A67 /* springbg.png in Resources */,
+				BCC044D8182E16E200451A67 /* winterbg.png in Resources */,
 				BCA10E93182CC941003E9CE1 /* background-music-aac.caf in Resources */,
+				BCC044D0182E16CB00451A67 /* autumn.png in Resources */,
 				BCDBA8021828EEBD007768A5 /* Default-568h@2x.png in Resources */,
+				BCC044D2182E16CB00451A67 /* spring.png in Resources */,
+				BCC044D4182E16CB00451A67 /* summer.png in Resources */,
+				BCC044D6182E16CB00451A67 /* winter.png in Resources */,
 				BCDBA8101828EEBD007768A5 /* Icon@2x.png in Resources */,
 				BCA10E94182CC941003E9CE1 /* pew-pew-lei.caf in Resources */,
 			);
@@ -1024,6 +1066,7 @@
 				BCDBA9261828EEBE007768A5 /* CCProfiling.m in Sources */,
 				BCDBA8BD1828EEBE007768A5 /* CCShaderCache.m in Sources */,
 				BCDBA8C31828EEBE007768A5 /* CCSprite.m in Sources */,
+				BCD9A9BD1832273F00EC6725 /* ExcessiveScene.m in Sources */,
 				BCDBA86A1828EEBD007768A5 /* CCGrabber.m in Sources */,
 				BCDBA9741828EEBE007768A5 /* mat3.c in Sources */,
 				BCDBA98E1828EEBE007768A5 /* AppDelegate.mm in Sources */,
@@ -1077,6 +1120,7 @@
 				BCDBA8C01828EEBE007768A5 /* ccShaders.m in Sources */,
 				BCDBA9911828EEBE007768A5 /* HelloWorldLayer.m in Sources */,
 				BCDBA9161828EEBE007768A5 /* CCWindow.m in Sources */,
+				BCCA0C5B182DD84500ACBD50 /* GameBeginScene.m in Sources */,
 				BCDBA8F41828EEBE007768A5 /* cocos2d.m in Sources */,
 				BCDBA8A11828EEBE007768A5 /* CCProgressTimer.m in Sources */,
 				BCDBA8761828EEBD007768A5 /* CCLabelTTF.m in Sources */,
